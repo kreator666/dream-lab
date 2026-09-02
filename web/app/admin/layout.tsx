@@ -1,7 +1,11 @@
 import Link from "next/link";
-import { Building2, FileText, LayoutDashboard, LogOut } from "lucide-react";
+import { auth } from "@/auth";
+import { SignOutButton } from "@/components/sign-out-button";
+import { Building2, FileText, LayoutDashboard, LogOut, User } from "lucide-react";
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+  const session = await auth();
+
   return (
     <div className="flex min-h-screen flex-col md:flex-row">
       {/* Sidebar */}
@@ -26,7 +30,22 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       </aside>
 
       {/* Main */}
-      <main className="flex-1 bg-cream p-6 md:p-10">{children}</main>
+      <main className="flex-1 bg-cream p-6 md:p-10">
+        <header className="mb-6 flex items-center justify-between">
+          <div />
+          <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-sm text-chocolate shadow-sm">
+              <User className="h-4 w-4" />
+              <span>{session?.user?.name || session?.user?.email}</span>
+              <span className="rounded-full bg-sky/10 px-2 py-0.5 text-xs text-sky-dark">
+                {session?.user?.role}
+              </span>
+            </div>
+            <SignOutButton />
+          </div>
+        </header>
+        {children}
+      </main>
     </div>
   );
 }
