@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Star } from "lucide-react";
 
 export type FirmCardProps = {
+  index?: number;
   slug: string;
   name: string;
   logo?: string | null;
@@ -13,6 +14,7 @@ export type FirmCardProps = {
 };
 
 export function FirmCard({
+  index = 0,
   slug,
   name,
   dataPlatform,
@@ -24,7 +26,8 @@ export function FirmCard({
   return (
     <Link
       href={`/firms/${slug}`}
-      className="cartoon-card flex flex-col gap-3 bg-white p-5 transition-transform hover:-translate-y-1"
+      className="cartoon-card animate-pop-in flex flex-col gap-3 bg-white p-5 transition-transform hover:-translate-y-1"
+      style={{ animationDelay: `${index * 80}ms` }}
     >
       <div className="flex items-start justify-between">
         <div className="flex items-center gap-3">

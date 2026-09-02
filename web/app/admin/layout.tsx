@@ -1,0 +1,52 @@
+import Link from "next/link";
+import { Building2, FileText, LayoutDashboard, LogOut } from "lucide-react";
+
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex min-h-screen flex-col md:flex-row">
+      {/* Sidebar */}
+      <aside className="w-full border-b-2 border-chocolate bg-night p-4 text-cream md:w-64 md:border-b-0 md:border-r-2">
+        <Link href="/" className="flex items-center gap-2 px-2">
+          <span className="font-heading text-xl">冒险岛后台</span>
+        </Link>
+        <nav className="mt-6 space-y-2">
+          <AdminLink href="/admin" icon={<LayoutDashboard className="h-4 w-4" />}>
+            控制台
+          </AdminLink>
+          <AdminLink href="/admin/firms" icon={<Building2 className="h-4 w-4" />}>
+            平台管理
+          </AdminLink>
+          <AdminLink href="/admin/articles" icon={<FileText className="h-4 w-4" />}>
+            文章管理
+          </AdminLink>
+          <AdminLink href="/" icon={<LogOut className="h-4 w-4" />}>
+            返回前台
+          </AdminLink>
+        </nav>
+      </aside>
+
+      {/* Main */}
+      <main className="flex-1 bg-cream p-6 md:p-10">{children}</main>
+    </div>
+  );
+}
+
+function AdminLink({
+  href,
+  icon,
+  children,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className="flex items-center gap-3 rounded-xl px-3 py-2 text-sm text-cream/80 transition-colors hover:bg-cream/10 hover:text-cream"
+    >
+      {icon}
+      {children}
+    </Link>
+  );
+}

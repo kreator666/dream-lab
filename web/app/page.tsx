@@ -3,7 +3,7 @@ import { PandaMascot } from "@/components/panda-mascot";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { buttonVariants } from "@/components/ui/button";
-import { Map, BookOpen, Landmark, Compass } from "lucide-react";
+import { Map, BookOpen, Landmark, Compass, Cloud } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -14,6 +14,12 @@ export default function Home() {
       <main className="flex-1">
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-b from-sky/30 to-cream py-16 md:py-24">
+          {/* Decorative clouds */}
+          <Cloud className="absolute left-[5%] top-[15%] h-16 w-16 animate-float text-white opacity-80" />
+          <Cloud className="absolute right-[10%] top-[10%] h-20 w-20 animate-float-delayed text-white opacity-70" />
+          <Cloud className="absolute left-[20%] top-[60%] h-12 w-12 animate-float-slow text-white opacity-60" />
+          <Cloud className="absolute right-[25%] top-[55%] h-14 w-14 animate-float text-white opacity-50" />
+
           <div className="absolute inset-x-0 top-0 h-32 bg-[radial-gradient(circle_at_10%_20%,#FFE66D_0%,transparent_20%)] opacity-50" />
           <div className="absolute inset-x-0 top-16 h-32 bg-[radial-gradient(circle_at_80%_30%,#FF6B6B_0%,transparent_20%)] opacity-40" />
 
@@ -52,7 +58,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex justify-center md:mt-0">
-              <div className="rounded-full border-4 border-chocolate bg-white p-4 shadow-[0_8px_0_#5D4037]">
+              <div className="animate-bounce-soft rounded-full border-4 border-chocolate bg-white p-4 shadow-[0_8px_0_#5D4037]">
                 <PandaMascot className="h-48 w-48 md:h-64 md:w-64" />
               </div>
             </div>
@@ -66,10 +72,10 @@ export default function Home() {
               快速入口
             </h2>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <QuickCard href="/firms" icon={<Landmark className="h-8 w-8" />} title="规则汇总" desc="20+ 平台规则对比" color="bg-sky" />
-              <QuickCard href="/road" icon={<Map className="h-8 w-8" />} title="考试路径" desc="从开户到通关" color="bg-grass" />
-              <QuickCard href="/articles" icon={<BookOpen className="h-8 w-8" />} title="教程中心" desc="注册 / 出金 / 软件" color="bg-lemon" />
-              <QuickCard href="/live" icon={<Compass className="h-8 w-8" />} title="实盘路径" desc="拿到账号之后" color="bg-peach" />
+              <QuickCard index={0} href="/firms" icon={<Landmark className="h-8 w-8" />} title="规则汇总" desc="20+ 平台规则对比" color="bg-sky" />
+              <QuickCard index={1} href="/road" icon={<Map className="h-8 w-8" />} title="考试路径" desc="从开户到通关" color="bg-grass" />
+              <QuickCard index={2} href="/articles" icon={<BookOpen className="h-8 w-8" />} title="教程中心" desc="注册 / 出金 / 软件" color="bg-lemon" />
+              <QuickCard index={3} href="/live" icon={<Compass className="h-8 w-8" />} title="实盘路径" desc="拿到账号之后" color="bg-peach" />
             </div>
           </div>
         </section>
@@ -91,12 +97,14 @@ export default function Home() {
 }
 
 function QuickCard({
+  index,
   href,
   icon,
   title,
   desc,
   color,
 }: {
+  index: number;
   href: string;
   icon: React.ReactNode;
   title: string;
@@ -106,9 +114,10 @@ function QuickCard({
   return (
     <Link
       href={href}
-      className="group cartoon-card flex flex-col items-center gap-3 bg-white p-6 text-center transition-transform hover:-translate-y-1"
+      className="group cartoon-card animate-pop-in flex flex-col items-center gap-3 bg-white p-6 text-center transition-transform hover:-translate-y-1"
+      style={{ animationDelay: `${index * 100}ms` }}
     >
-      <div className={`rounded-2xl ${color} p-3 text-white shadow-[0_3px_0_#5D4037]`}>
+      <div className={`rounded-2xl ${color} p-3 text-white shadow-[0_3px_0_#5D4037] transition-transform group-hover:scale-110 group-hover:rotate-3`}>
         {icon}
       </div>
       <h3 className="font-heading text-xl text-chocolate group-hover:text-sky-dark">{title}</h3>
