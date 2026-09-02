@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Panda Island custom palette */
+  --color-sky: #4ECDC4;
+  --color-sky-dark: #2BB5AA;
+  --color-lemon: #FFE66D;
+  --color-lemon-dark: #FDBF2E;
+  --color-peach: #FF6B6B;
+  --color-peach-dark: #E85555;
+  --color-grass: #95E1D3;
+  --color-grass-dark: #6BCFB9;
+  --color-cream: #FFFDF7;
+  --color-cloud: #F7F9FC;
+  --color-chocolate: #5D4037;
+  --color-night: #2C3E50;
+
+  --font-sans: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-heading: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+  --background: #FFFDF7;
+  --foreground: #5D4037;
+  --card: #FFFFFF;
+  --card-foreground: #5D4037;
+  --popover: #FFFFFF;
+  --popover-foreground: #5D4037;
+  --primary: #4ECDC4;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FFE66D;
+  --secondary-foreground: #5D4037;
+  --muted: #F7F9FC;
+  --muted-foreground: #8D7B71;
+  --accent: #95E1D3;
+  --accent-foreground: #5D4037;
+  --destructive: #FF6B6B;
+  --border: #5D4037;
+  --input: #5D4037;
+  --ring: #4ECDC4;
+  --radius: 1rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
+
+/* Panda Island utility: cartoon outline shadow */
+@utility cartoon-card {
+  border-radius: var(--radius-xl);
+  border: 2px solid var(--color-chocolate);
+  box-shadow: 0 6px 0 var(--color-chocolate);
+}
+
+@utility cartoon-btn {
+  border-radius: 9999px;
+  border: 3px solid var(--color-chocolate);
+  box-shadow: 0 4px 0 var(--color-chocolate);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+@layer utilities {
+  .cartoon-btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 0 0 var(--color-chocolate);
+  }
+}
