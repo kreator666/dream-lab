@@ -26,9 +26,9 @@ export default function Home() {
           <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 text-center md:flex-row md:justify-between md:px-8 md:text-left">
             <div className="max-w-xl">
               <h1 className="font-heading text-4xl leading-tight text-chocolate md:text-6xl">
-                中文 Prop Firm
+                Dream Lab
                 <br />
-                <span className="text-sky-dark">冒险岛</span>
+                <span className="text-sky-dark">中文 Prop Firm 导航</span>
               </h1>
               <p className="mt-6 text-lg text-chocolate/80">
                 规则汇总 · 折扣码 · 出金教程 · 社区互助

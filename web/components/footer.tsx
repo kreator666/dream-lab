@@ -6,7 +6,7 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="grid gap-8 md:grid-cols-3">
           <div>
-            <h3 className="font-heading text-lg">Prop Firm 冒险岛</h3>
+            <h3 className="font-heading text-lg">Dream Lab</h3>
             <p className="mt-2 text-sm opacity-80">
               中文 Prop Firm 导航社区，种田养老，稳健通关。
             </p>
@@ -29,7 +29,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t border-cream/20 pt-6 text-center text-xs opacity-60">
-          © {new Date().getFullYear()} PropFirmVIP 冒险岛. 信息整理，仅供学习，不构成投资建议。
+          © {new Date().getFullYear()} Dream Lab. 信息整理，仅供学习，不构成投资建议。
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
       {/* Sidebar */}
       <aside className="w-full border-b-2 border-chocolate bg-night p-4 text-cream md:w-64 md:border-b-0 md:border-r-2">
         <Link href="/" className="flex items-center gap-2 px-2">
-          <span className="font-heading text-xl">冒险岛后台</span>
+          <span className="font-heading text-xl">Dream Lab 后台</span>
         </Link>
         <nav className="mt-6 space-y-2">
           <AdminLink href="/admin" icon={<LayoutDashboard className="h-4 w-4" />}>

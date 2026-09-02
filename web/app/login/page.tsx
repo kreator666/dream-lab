@@ -85,7 +85,7 @@ export default function LoginPage() {
           <div className="mx-auto mb-3 flex h-20 w-20 animate-bounce-soft items-center justify-center rounded-full bg-grass shadow-[0_4px_0_#5D4037]">
             <span className="text-4xl">🐼</span>
           </div>
-          <h1 className="font-heading text-3xl text-chocolate">冒险岛登录</h1>
+          <h1 className="font-heading text-3xl text-chocolate">Dream Lab 登录</h1>
           <p className="mt-1 text-sm text-chocolate/70">登录后可进入后台管理内容</p>
         </div>
 

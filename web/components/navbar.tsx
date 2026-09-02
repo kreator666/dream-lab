@@ -21,7 +21,7 @@ export async function Navbar() {
         <Link href="/" className="flex items-center gap-2">
           <PandaMascot className="h-10 w-10" />
           <span className="font-heading text-xl font-bold text-chocolate">
-            Prop Firm 冒险岛
+            Dream Lab
           </span>
         </Link>
 

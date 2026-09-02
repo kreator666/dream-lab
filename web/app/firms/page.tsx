@@ -55,7 +55,7 @@ export default async function FirmsPage({ searchParams }: Props) {
               <PandaMascot variant="coin" className="h-20 w-20" />
             </div>
             <h1 className="mt-4 font-heading text-3xl text-chocolate md:text-4xl">
-              Prop Firm 规则汇总
+              Dream Lab 规则汇总
             </h1>
             <p className="mt-2 text-chocolate/70">
               主流平台规则对比，购买前请再次核对官网最新条款
