@@ -7,7 +7,9 @@ import { Menu, User } from "lucide-react";
 const navLinks = [
   { href: "/firms", label: "规则汇总" },
   { href: "/articles", label: "教程" },
+  { href: "/know", label: "基础知识" },
   { href: "/road", label: "考试路径" },
+  { href: "/live", label: "实盘路径" },
 ];
 
 export async function Navbar() {
