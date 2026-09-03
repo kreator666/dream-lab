@@ -1,0 +1,12 @@
+# Build artifacts
+*.tar.gz
+*.zip
+.next/
+out/
+build/
+node_modules/
+.env*
+!.env.example
+.DS_Store
+*.pem
+*.log
