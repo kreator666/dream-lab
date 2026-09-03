@@ -155,9 +155,6 @@ export default function LoginPage() {
           )}
         </div>
 
-        <p className="mt-4 text-center text-xs text-chocolate/50">
-          默认管理员：admin@example.com / admin123
-        </p>
       </div>
     </main>
   );

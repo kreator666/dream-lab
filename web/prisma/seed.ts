@@ -4,13 +4,21 @@ import bcrypt from "bcryptjs";
 const prisma = new PrismaClient();
 
 async function main() {
-  const adminPassword = await bcrypt.hash("admin123", 10);
+  // 移除旧版默认管理员，避免弱口令暴露
+  await prisma.user.deleteMany({
+    where: { email: { in: ["admin@example.com", "admin@test.com"] } },
+  });
+
+  const adminPassword = await bcrypt.hash(
+    "s2vfnEd/2PlJK399FWVbkXVsp39g/tvM",
+    10,
+  );
   const admin = await prisma.user.upsert({
-    where: { email: "admin@example.com" },
-    update: { password: adminPassword },
+    where: { email: "nuonuo@dreamlab.local" },
+    update: { password: adminPassword, name: "nuonuo", role: UserRole.ADMIN },
     create: {
-      email: "admin@example.com",
-      name: "熊猫岛主",
+      email: "nuonuo@dreamlab.local",
+      name: "nuonuo",
       password: adminPassword,
       role: UserRole.ADMIN,
     },
