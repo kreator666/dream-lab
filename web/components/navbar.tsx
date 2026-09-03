@@ -10,6 +10,7 @@ const navLinks = [
   { href: "/know", label: "基础知识" },
   { href: "/road", label: "考试路径" },
   { href: "/live", label: "实盘路径" },
+  { href: "/raffles", label: "抽奖" },
 ];
 
 export async function Navbar() {

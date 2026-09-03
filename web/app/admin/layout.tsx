@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { auth } from "@/auth";
 import { SignOutButton } from "@/components/sign-out-button";
-import { Building2, FileText, LayoutDashboard, LogOut, User } from "lucide-react";
+import { Building2, FileText, Gift, LayoutDashboard, LogOut, Ticket, User } from "lucide-react";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = await auth();
@@ -22,6 +22,12 @@ export default async function AdminLayout({ children }: { children: React.ReactN
           </AdminLink>
           <AdminLink href="/admin/articles" icon={<FileText className="h-4 w-4" />}>
             文章管理
+          </AdminLink>
+          <AdminLink href="/admin/registrations" icon={<Ticket className="h-4 w-4" />}>
+            折扣码登记
+          </AdminLink>
+          <AdminLink href="/admin/raffles" icon={<Gift className="h-4 w-4" />}>
+            抽奖活动
           </AdminLink>
           <AdminLink href="/" icon={<LogOut className="h-4 w-4" />}>
             返回前台

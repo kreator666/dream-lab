@@ -3,7 +3,7 @@ import { PandaMascot } from "@/components/panda-mascot";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { buttonVariants } from "@/components/ui/button";
-import { Map, BookOpen, Landmark, Compass, Cloud } from "lucide-react";
+import { Map, BookOpen, Landmark, Compass, Cloud, Ticket, Gift } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
@@ -71,11 +71,13 @@ export default function Home() {
             <h2 className="mb-8 text-center font-heading text-2xl text-chocolate md:text-3xl">
               快速入口
             </h2>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               <QuickCard index={0} href="/firms" icon={<Landmark className="h-8 w-8" />} title="规则汇总" desc="20+ 平台规则对比" color="bg-sky" />
               <QuickCard index={1} href="/road" icon={<Map className="h-8 w-8" />} title="考试路径" desc="从开户到通关" color="bg-grass" />
               <QuickCard index={2} href="/articles" icon={<BookOpen className="h-8 w-8" />} title="教程中心" desc="注册 / 出金 / 软件" color="bg-lemon" />
               <QuickCard index={3} href="/live" icon={<Compass className="h-8 w-8" />} title="实盘路径" desc="拿到账号之后" color="bg-peach" />
+              <QuickCard index={4} href="/register-code" icon={<Ticket className="h-8 w-8" />} title="折扣码登记" desc="登记订单参与抽奖" color="bg-sky" />
+              <QuickCard index={5} href="/raffles" icon={<Gift className="h-8 w-8" />} title="抽奖活动" desc="赢取账号 / 礼品" color="bg-grass" />
             </div>
           </div>
         </section>
